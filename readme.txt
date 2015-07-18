@@ -7,7 +7,7 @@ Stable tag: 0.0.1
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-A simple profiling tool used to determine which templates take a while to load.
+A simple profiling tool used to determine which templates take a while to load. PHP >= 5.3.0
 
 == Description ==
 

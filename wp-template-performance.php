@@ -15,38 +15,20 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+require plugin_dir_path( __FILE__ ) . 'includes/Plugin.php';
+
 /**
- * @param string $class The fully-qualified class name.
- * @return void
+ * Begins execution of the plugin.
+ *
+ * Since everything within the plugin is registered via hooks,
+ * then kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
  */
-spl_autoload_register(function ($class) {
-
-    // project-specific namespace prefix
-    $prefix = 'WP_Template_Performance\\';
-
-    // base directory for the namespace prefix
-    $base_dir = __DIR__ . '/includes/';
-
-    // does the class use the namespace prefix?
-    $len = strlen($prefix);
-    if (strncmp($prefix, $class, $len) !== 0) {
-        // no, move to the next registered autoloader
-        return;
-    }
-
-    // get the relative class name
-    $relative_class = substr($class, $len);
-
-    // replace the namespace prefix with the base directory, replace namespace
-    // separators with directory separators in the relative class name, append
-    // with .php
-    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
-
-    // if the file exists, require it
-    if (file_exists($file)) {
-        require $file;
-    }
-});
+function run_wp_template_performance() {
+	$plugin = new \WP_Template_Performance\Plugin();
+	$plugin->run();
+}
+run_wp_template_performance();
 
 add_action('shutdown', function(){
 	var_dump(\WP_Template_Performance\Profile::get_statistics(true));
