@@ -7,7 +7,7 @@
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
-A simple profiling tool used to determine which templates take a while to load. PHP >= 5.3.0
+A simple profiling tool used to determine which templates take a while to load. PHP >= 5.3.0, WIP
 
 ## Description ##
 
