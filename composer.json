@@ -1,0 +1,15 @@
+{
+    "name": "nathanielks/wp-template-performance",
+    "description": "A simple profiling tool used to determine which templates take a while to load. WIP.",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Nathaniel Schweinberg",
+            "email": "nathaniel@fightthecurrent.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
