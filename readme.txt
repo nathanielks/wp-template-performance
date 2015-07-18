@@ -51,4 +51,4 @@ In order to determine load time of WordPress-loaded templates, modification of t
 	}
 	```
 
-1. The heaviest template will appear at the top of the list at the bottom of whatever page you're viewing, with how long it took to load as well as some other valuable statistics. Times are displayed in seconds.
+1. The heaviest template will appear at the top of a list at the bottom of whatever page you're viewing, with how long it took to load as well as some other valuable statistics. Times are displayed in seconds.
