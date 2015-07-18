@@ -36,12 +36,12 @@ class Profile {
 			while(isset(self::$templates[$i]['end'])){
 				$i--;
 			}
-			// Let's track how long it took to walk up the array so we can
-			// remove it for more accurate render time
-			self::$templates[$current_index]['walk_time'] = microtime(true) - $walk_start;
 			if($i >= self::INDEX){
 				self::$templates[$current_index]['parent'] = $i;
 			}
+			// Let's track how long it took to walk up the array so we can
+			// remove it for more accurate render time
+			self::$templates[$current_index]['walk_time'] = microtime(true) - $walk_start;
 		}
 
 	}
