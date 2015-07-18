@@ -13,7 +13,7 @@ A simple profiling tool used to determine which templates take a while to load. 
 
 Note: This plugin is currently intended for developers as it requires modification of WP Core. Read on to find out why this is necessary and why you shouldn't modify Core.
 
-In order to determine load time of WordPress-loaded templates, modification of the `[load_template](https://codex.wordpress.org/Function_Reference/load_template)` function is required. Unfortunately there aren't any hooks available to do this, so modification of WP Core is required. As this plugin is meant to be used in a non-production environment, doing so in a development/staging environment isn't the worst thing in the world. I absolutely, postively, whole-heartedly do _not_ recommend doing this in a production environment\*. Do so at your own risk.
+In order to determine load time of WordPress-loaded templates, modification of the [`load_template`](https://codex.wordpress.org/Function_Reference/load_template) function is required. Unfortunately there aren't any hooks available to do this, so modification of WP Core is required. As this plugin is meant to be used in a non-production environment, doing so in a development/staging environment isn't the worst thing in the world. I absolutely, postively, whole-heartedly do _not_ recommend doing this in a production environment\*. Do so at your own risk.
 
 \* Ideally you'll have as least three stages of development: local/development, staging, and production. Your staging environment should be identical to production, which is why you should not use this in production and should be used in the aforementioned stages.
 
