@@ -47,6 +47,7 @@ class Plugin {
 		$this->version = '0.0.1';
 
 		$this->load_dependencies();
+		$this->profile_woocommerce();
 
 	}
 
@@ -92,6 +93,24 @@ class Plugin {
 
 		$this->loader = new Loader();
 
+	}
+
+
+	/**
+	 * Add profiling functions to relevant WooCommerce hooks.
+	 *
+	 * @since    0.0.1
+	 * @access   private
+	 */
+	private function profile_woocommerce(){
+
+		add_action( 'woocommerce_before_template_part', function($template_name, $template_path, $located, $args){
+			\WP_Template_Performance\Profile::start($located);
+		}, 0, 4);
+
+		add_action( 'woocommerce_after_template_part', function($template_name, $template_path, $located, $args){
+			\WP_Template_Performance\Profile::end($located);
+		}, 9999, 4);
 	}
 
 	/**
